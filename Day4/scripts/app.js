@@ -29,7 +29,17 @@ hrApp.config(['$routeProvider',
                 templateUrl: 'views/demo/user.html',
                 controller: 'UserController'
             })
-            .otherwise({
+            . when('/colors', {
+                templateUrl: 'views/demo/colors.html',
+                controller: 'Colors'
+            })
+            .when('/forms', {
+                templateUrl: 'views/demo/form.html',
+                controller: 'Form'
+            })
+
+
+    .otherwise({
                 templateUrl: 'views/main.html',
                 controller: 'MainController'
             });

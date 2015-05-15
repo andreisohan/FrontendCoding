@@ -3,12 +3,19 @@
 
     <div class="panel-body">
         <!--TODO #1 create the select element-->
+        <p><select ng-options="color.text for color in colors track by color.text" ng-model="color" ng-change="changeColor()"></select></p>
         <br>
         <!--TODO #4-->
     </div>
-
+<div ng-class="selectEl">Some Text</div>
     <p>---------------------------</p>
 
     <!--TODO#8-->
 
+    Input1: <input name="input1" type="text" ng-model="searchText"/>
+    Input2: <input name="input2" type="text" ng-model="orderByText"/>
+
+    <div ng-repeat="label in colors |orderBy:orderByText|filter:searchText " >
+        label.text = {{label.text}}
+    </div>
 </div>
